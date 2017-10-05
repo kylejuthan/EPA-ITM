@@ -10,10 +10,13 @@
 # variable cnt is assigned the output of grep processor /proc/cpuinfo | wc -l
 cnt=`grep processor /proc/cpuinfo | wc -l`
 
-#if cnt variable is less than or equal to parameter inputted by user
-if [ $cnt -le $1 ]; then
+#if cnt variable is less than to parameter inputted by user
+if [ $cnt -lt $1 ]; then
 
   echo "Not enough CPUS, exiting"
+
+else
+  echo "Enough CPUs"
 
 fi
 #fi closes if statement
